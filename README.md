@@ -109,4 +109,98 @@ Simulate a real-world child abduction alert system for India – featuring:
 
 ## 🙌 Contributing
 
-👥 Developed by Sushanth and Tejesh
+---
+
+## 🤝 How to Contribute
+
+Thanks for checking out **Bharat Alert** — contributions are welcome! If you'd like to help, here are a few ways to get started.
+
+### ✅ Good first issues
+- Fix small typos or wording in the UI / README.
+- Add missing form validations (client-side).
+- Improve accessibility: add `aria-*` attributes to form controls.
+- Add unit tests for small utility functions.
+- Add more screenshots or an animated demo GIF.
+
+---
+
+## 🛠 Running locally (quick)
+
+1. **Clone the repo:**
+
+    git clone git@github.com:Sushanth-Goud/bharat-alert.git
+    cd bharat-alert
+
+2. **Install dependencies (if applicable):**
+
+    npm install    # or yarn
+
+3. **Start the dev server:**
+
+    npm start
+
+4. **Open your browser:**
+
+    http://localhost:3000
+
+> **If this project is static (HTML/CSS/JS)**, simply open `index.html` in your browser or use a tiny server:
+
+    python3 -m http.server 8000
+
+---
+
+## 🔁 Workflow for contributors (recommended)
+
+- Fork the repo & create a new branch:
+
+    git switch -c fix/readme-typo
+
+- Make small, focused commits.
+- Rebase and squash where appropriate.
+- Open a Pull Request with a clear description.
+- Link related issues and add screenshots if UI changes were made.
+
+---
+
+## 🧪 Testing
+
+### Automated tests
+
+    npm test
+
+### Manual test checklist
+
+- Submit a report with/without a photo  
+- Approve/reject from admin panel  
+- Submit a sighting  
+- Verify map pin updates correctly  
+
+---
+
+## 📋 PR checklist
+
+- [ ] Code compiles, no console errors  
+- [ ] Lints pass (if applicable)  
+- [ ] UI changes include screenshots  
+- [ ] README updated for new features  
+- [ ] No sensitive keys committed  
+
+---
+
+## 📜 Code of Conduct
+
+Be respectful and constructive during discussions.  
+Report any inappropriate behavior to the maintainers.
+
+---
+
+## 📬 Contact / Maintainers
+
+**Maintainers:** Sushanth, Tejesh  
+**Repo:** https://github.com/Sushanth-Goud/bharat-alert
+
+For major changes, open an issue before submitting a PR.
+
+---
+
+Thanks for helping improve **Bharat Alert** — even small contributions matter!

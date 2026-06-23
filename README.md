@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 # Bharat Alert – Web-Based Child Abduction Alert System
 
+> Presentation: [docs/presentation/FINAL PPT IOMP.pptx](docs/presentation/FINAL%20PPT%20IOMP.pptx)
+
 ```
 ██████╗ ██╗  ██╗ █████╗ ██████╗  █████╗ ████████╗     █████╗ ██╗     ███████╗██████╗ ████████╗
 ██╔══██╗██║  ██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝    ██╔══██╗██║     ██╔════╝██╔══██╗╚══██╔══╝
@@ -81,11 +83,11 @@
 
 | User Report Form | Admin Dashboard |
 |------------------|------------------|
-| ![Form](screenshots/form.png) | ![Dashboard](screenshots/dashboardd.png) |
+| ![Form](docs/screenshots/form.png) | ![Dashboard](docs/screenshots/dashboardd.png) |
 
 | Alerts Board | Sighting Report |
 |--------------|------------------|
-| ![Alerts](screenshots/alerts.png) | ![Sighting](screenshots/sighting.png) |
+| ![Alerts](docs/screenshots/alerts.png) | ![Sighting](docs/screenshots/sighting.png) |
 
 
 

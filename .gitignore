@@ -1,4 +1,7 @@
 # Logs
+
+# Ignore generated documentation
+/docs/
 logs
 *.log
 npm-debug.log*

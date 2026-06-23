@@ -1,62 +1,42 @@
-import { Routes, Route } from 'react-router-dom';
-import { Header } from '@/components/ui/header';
-import { ToastProvider } from '@/components/ui/toast';
-import { AuthProvider } from '@/contexts/AuthContext';
-import { SocketProvider } from '@/contexts/SocketContext';
-import { HomePage } from '@/pages/HomePage';
-import { AlertsPage } from '@/pages/AlertsPage';
-import { SubmitReportPage } from '@/pages/SubmitReportPage';
-import { AdminDashboard } from '@/pages/AdminDashboard';
-import { SightingPage } from '@/pages/SightingPage';
-import { LoginPage } from '@/pages/LoginPage';
-import { WatcherRegisterPage } from '@/pages/WatcherRegisterPage';
-import { ReportDetailPage } from '@/pages/ReportDetailPage';
 
-function App() {
-  return (
-    <AuthProvider>
-      <SocketProvider>
-        <ToastProvider>
-        <div className="min-h-screen bg-background">
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/alerts" element={<AlertsPage />} />
-              <Route path="/submit-report" element={<SubmitReportPage />} />
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/watcher-register" element={<WatcherRegisterPage />} />
-              <Route path="/report/:id" element={<ReportDetailPage />} />
-              <Route path="/sighting/:reportId" element={<SightingPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </ToastProvider>
-    </SocketProvider>
-  </AuthProvider>
-  );
-}
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import Admin from "./pages/Admin";
+import ReportDetail from "./pages/ReportDetail";
+import SightingForm from "./pages/SightingForm";
+import MissingChildForm from "./pages/MissingChildForm";
+import NotFound from "./pages/NotFound";
 
-function Footer() {
-  return (
-    <footer className="border-t py-8 mt-16">
-      <div className="max-w-5xl mx-auto px-4 text-center">
-        <p className="text-muted-foreground text-sm">
-          Bharat Alert - A community-powered child safety initiative
-        </p>
-        <p className="text-muted-foreground text-xs mt-2">
-          In case of emergency, contact local authorities immediately
-        </p>
-        <div className="mt-4 flex justify-center gap-4 text-sm">
-          <a href="#" className="text-muted-foreground hover:text-foreground">About</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">Contact</a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">Privacy</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/report/:id" element={<ReportDetail />} />
+          <Route path="/report/new" element={<MissingChildForm />} />
+          <Route path="/sighting/:id" element={<SightingForm />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

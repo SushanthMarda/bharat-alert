@@ -1,0 +1,10 @@
+flask
+flask-cors
+flask-socketio
+flask-limiter
+sqlalchemy
+pyjwt
+werkzeug
+python-dotenv
+requests
+eventlet

@@ -19,7 +19,9 @@ dist-ssr
 
 # Environment variables
 backend/.env
-backend/.env.example
+# backend/.env.example should be tracked
+
+docs/
 
 # Editor directories and files
 .vscode/*

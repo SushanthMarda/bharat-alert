@@ -1,119 +1,3 @@
-<<<<<<< HEAD
-# Bharat Alert – Web-Based Child Abduction Alert System
-
-> Presentation: [docs/presentation/FINAL PPT IOMP.pptx](docs/presentation/FINAL%20PPT%20IOMP.pptx)
-
-```
-██████╗ ██╗  ██╗ █████╗ ██████╗  █████╗ ████████╗     █████╗ ██╗     ███████╗██████╗ ████████╗
-██╔══██╗██║  ██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝    ██╔══██╗██║     ██╔════╝██╔══██╗╚══██╔══╝
-██████╔╝███████║███████║██████╔╝███████║   ██║       ███████║██║     █████╗  ██████╔╝   ██║   
-██╔══██╗██╔══██║██╔══██║██╔══██╗██╔══██║   ██║       ██╔══██║██║     ██╔══╝  ██╔══██╗   ██║   
-██████╔╝██║  ██║██║  ██║██║  ██║██║  ██║   ██║       ██║  ██║███████╗███████╗██║  ██║   ██║   
-╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝   
-                                                                                              
-```
-
-## 📝 Description
-
-**Bharat Alert** is a simulation of an Amber Alert–style system for India. It is a fully web-managed alert system allowing users to report missing children, and enabling admins to track, verify, and manage alerts and sightings.
-
-
----
-
-## 🌟 Core Features
-
-✅ **Submit Reports:**  
-- Child's name, age, gender  
-- Last seen location (text + map pin)  
-- Date/time, contact info, optional photo  
-
-✅ **Admin Controls:**  
-- Approve or reject pending reports  
-- View live alerts  
-- Mark reports as “Solved”  
-
-✅ **Sighting Reports:**  
-- Anyone can submit sightings tied to a missing child report  
-- Location + comments are recorded  
-
-✅ **Public Alert Board:**  
-- Approved reports displayed with map pins showing last known locations  
-
----
-
-## 🌐 Pages Overview
-
-| Page | Description |
-|------|-------------|
-| `/submit-report` | Form to report a missing child |
-| `/admin-dashboard` | Admin control panel |
-| `/alerts` | Public alert board with live map |
-| `/report/:id` | View detailed report and submit sighting |
-| `/sighting/:id` | Submit a sighting for a specific report |
-
----
-
-## 🗺️ Map Integration
-
-- Built with **Leaflet.js + OpenStreetMap**
-- Pin last seen/sighting locations
-- Drop-a-pin while reporting
-- View all sightings per report
-
----
-
-## 🧪 Tech Stack
-
-- **Frontend:** HTML, CSS, JS (React optional)
-- **Map:** Leaflet.js or Google Maps (API key needed)
-- **Database:** JSON-based mock database
-
-```json
-{
-  "pending_reports": [],
-  "approved_reports": [],
-  "solved_reports": [],
-  "sightings": []
-}
-```
-
----
-
-## 📸 Screenshots
-
-| User Report Form | Admin Dashboard |
-|------------------|------------------|
-| ![Form](docs/screenshots/form.png) | ![Dashboard](docs/screenshots/dashboardd.png) |
-
-| Alerts Board | Sighting Report |
-|--------------|------------------|
-| ![Alerts](docs/screenshots/alerts.png) | ![Sighting](docs/screenshots/sighting.png) |
-
-
-
----
-
-## 📧 Test Emails
-
-Appears on login panel...
-
----
-
-## 🎯 Goal
-
-Simulate a real-world child abduction alert system for India – featuring:
-
-- Full admin control
-- Location-based alerting
-- Public awareness via an online alert board
-- Real-time tracking simulation
-
----
-
-## 🙌 Contributing
-
-👥 Developed by Sushanth and Tejesh
-=======
 # Bharat Alert
 > One‑line tagline
 
@@ -205,6 +89,14 @@ Bharat Alert is a real‑time missing‑child alert system. It enables authoriti
 │   ├── index.html           # Main HTML entry
 │   ├── package.json         # Node dependencies and scripts
 │   └── tailwind.config.js   # Tailwind configuration
+├── docs
+│   ├── presentation/
+│   │   └── FINAL PPT IOMP.pptx
+│   └── screenshots/
+│       ├── alerts.png
+│       ├── dashboardd.png
+│       ├── form.png
+│       └── sighting.png
 ├── logo.png                 # Project logo
 └── README.md                # *You are reading it now*
 ```
@@ -267,7 +159,7 @@ All endpoints are prefixed with `/api` and return JSON `{ data: ..., error: null
 | **sightings** | `id` (PK), `report_id` (FK), `description`, `lat`, `lon`, `submitted_by`, `submitted_at` |
 
 ## Key Implementation Details
-- **Socket.IO alerts** – on report creation, server finds watchers within `ALERT_RADIUS_KM` (haversine) and emits `new_alert` to their socket session. Watcher sockets are mapped via `user_socket_map` on connection.
+- **Socket.IO alerts** – on report creation, server finds watchers within `ALERT_RADIUS_KM` (Haversine) and emits `new_alert` to their socket session. Watcher sockets are mapped via `user_socket_map` on connection.
 - **JWT authentication** – `create_jwt` encodes user id, username, role, and 8‑hour expiry. `require_admin` decorator validates token and role.
 - **Geo‑radius watcher logic** – `utils.get_watchers_in_radius` uses the Haversine formula to filter watchers based on stored lat/lon.
 - **Rate limiting** – Flask‑Limiter limits report creation (5/min) and sighting creation (10/min) to mitigate abuse.
@@ -287,4 +179,3 @@ No dedicated test suite is present in the repository. Manual testing can be perf
 
 ## License
 The repository does not contain a LICENSE file; therefore the license is omitted.
->>>>>>> 6e1cb37 (Add comprehensive README)
